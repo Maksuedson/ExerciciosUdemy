@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import entidade.Triangulo;
 
-public class TrianguloJava {
+public class Programa {
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
@@ -31,7 +31,7 @@ public class TrianguloJava {
 		
 		
 		System.out.printf("A medida dos lados do triangulo X: %.4f%n", Xarea);
-		System.out.printf("A medida dos lados do triangulo X: %.4f%n", Yarea);
+		System.out.printf("A medida dos lados do triangulo Y: %.4f%n", Yarea);
 
 		sc.close();
 	}
