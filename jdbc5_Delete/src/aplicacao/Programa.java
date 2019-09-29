@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import db.DB;
+import db.DbException;
 
 public class Programa {
 
@@ -14,10 +15,15 @@ public class Programa {
 			conn = DB.getConnection();
 			
 			ps = conn.prepareStatement(
-					"delete * from depart"
+					"delete from department "
+					+ "where id = ?"
 					);
+			
+			ps.setInt(1, 8);
+			int linhasAfetadas = ps.executeUpdate();
+			System.out.println("Pronto ! Linhas afetadas: "+ linhasAfetadas);
 		} catch (Exception e) {
-			// TODO: handle exception
+			throw new DbException(e.getMessage());
 		}
 		
 
