@@ -11,28 +11,24 @@ public class Programa {
 
 	public static void main(String[] args) {
 		Connection conn = null;
-		PreparedStatement ps= null;
+		PreparedStatement ps = null;
 		try {
 			conn = DB.getConnection();
-			
-			ps = conn.prepareStatement(
-					"delete from department "
-					+ "where id = ?"
-					);
-			
-			ps.setInt(1, 1);
+			conn.setAutoCommit(false);
+
+			ps = conn.prepareStatement("delete from department " + "where id = ?");
+
+			ps.setInt(1, 7);
 			int linhasAfetadas = ps.executeUpdate();
-			System.out.println("Pronto ! Linhas afetadas: "+ linhasAfetadas);
+			System.out.println("Pronto ! Linhas afetadas: " + linhasAfetadas);
+
+			conn.commit();
 		} catch (Exception e) {
 			throw new DbIntegrityException(e.getMessage());
-		}finally {
+		} finally {
 			DB.fecharStatement(ps);
-			DB.closeConnection();			
+			DB.closeConnection();
 		}
-		
-
-						
-
 	}
 
 }
