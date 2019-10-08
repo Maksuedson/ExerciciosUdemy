@@ -50,7 +50,7 @@ public class Programa {
 					System.out.println("Pronto! Id = "+id);
 				}
 			}
-			//System.out.println("Pronto! Linhas afetadas: " + linhasAfetadas);
+			System.out.println("Pronto! Linhas afetadas: " + linhasAfetadas);
 		} catch (Exception e) {
 			throw new DbException(e.getMessage());
 		} finally {

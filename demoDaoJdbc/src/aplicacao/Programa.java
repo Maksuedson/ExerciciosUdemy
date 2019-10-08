@@ -9,8 +9,9 @@ public class Programa {
 	public static void main(String[] args) {
 		
 		VendedorDao vendedorDao = DaoFactory.criarVendedorDao();
-		Vendedor vendedor = vendedorDao.buscarPorId(2);
 		
+		System.out.println("=== TESTE 1: Vendedor buscarPorId ===");
+		Vendedor vendedor = vendedorDao.buscarPorId(2);				
 		System.out.println(vendedor);
 		
 	}

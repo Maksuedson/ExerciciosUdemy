@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import db.DB;
@@ -14,6 +15,7 @@ import modelo.entidade.Vendedor;
 
 public class VendedorDaoJDBC implements VendedorDao {
 	private Connection conn = null;
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	
 	
@@ -60,17 +62,8 @@ public class VendedorDaoJDBC implements VendedorDao {
 			rs = ps.executeQuery();
 			
 			if (rs.next()) {
-				Departamento dep = new Departamento();
-				dep.setId(rs.getInt("DepartmentId"));
-				dep.setNome(rs.getString("DepName"));
-				Vendedor vend = new Vendedor();
-				vend.setId(rs.getInt("Id"));
-				vend.setNome(rs.getString("Name"));
-				vend.setEmail(rs.getString("Email"));
-				vend.setDataNasc(rs.getDate("BirthDate"));
-				vend.setSalarioBase(rs.getDouble("BaseSalary"));
-				vend.setDepartamento(dep);
-				
+				Departamento dep = instanciarDepartamento(rs);
+				Vendedor vend = instanciarVendedor(rs, dep);
 				return vend;
 			}
 		} catch (SQLException e) {
@@ -80,6 +73,25 @@ public class VendedorDaoJDBC implements VendedorDao {
 			DB.fecharResult(rs);			
 		}
 		return null;
+	}
+
+	private Vendedor instanciarVendedor(ResultSet rs, Departamento dep) throws SQLException{
+		Vendedor vend = new Vendedor();
+		vend.setId(rs.getInt("id"));
+		vend.setNome(rs.getString("name"));
+		vend.setEmail(rs.getString("email"));
+		vend.setSalarioBase(rs.getDouble("basesalary"));
+		vend.setDataNasc(rs.getDate("birthdate"));
+		vend.setDepartamento(dep);
+		
+		return vend;
+	}
+
+	private Departamento instanciarDepartamento(ResultSet rs) throws SQLException {
+		Departamento dep = new Departamento();
+		dep.setId(rs.getInt("departmentid"));
+		dep.setNome(rs.getString("depname"));
+		return dep;
 	}
 
 	@Override
