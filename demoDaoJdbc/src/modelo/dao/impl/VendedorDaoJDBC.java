@@ -106,12 +106,6 @@ public class VendedorDaoJDBC implements VendedorDao {
 	}
 
 	@Override
-	public void listar(Vendedor obj) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public Vendedor buscarPorId(Integer id) {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -192,8 +186,7 @@ public class VendedorDaoJDBC implements VendedorDao {
 			DB.fecharStatement(ps);
 			DB.fecharResult(rs);			
 		}		
-	}
-	
+	}	
 
 	@Override
 	public List<Vendedor> buscaPorDepartamento(Departamento departamento) {
