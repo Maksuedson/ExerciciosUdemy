@@ -1,9 +1,11 @@
 package gui;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import aplicacao.Main;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -59,6 +61,9 @@ public class DepartamentoListController implements Initializable {
 		if (service == null) {
 			throw new IllegalStateException("Service estava null");
 		}
+		List<Departamento> list = service.bucarTodos();
+		obsList = FXCollections.observableArrayList(list);
+		tableViewDepartamento.setItems(obsList);
 		
 	}
 
