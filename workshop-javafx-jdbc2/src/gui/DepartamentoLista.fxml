@@ -23,7 +23,7 @@
       <TableView fx:id="tableViewDepartamento" prefHeight="313.0" prefWidth="578.0">
         <columns>
           <TableColumn fx:id="tableColumnId" prefWidth="75.0" text="Id" />
-          <TableColumn fx:id="tableColumnNome" prefWidth="75.0" text="Nome" />
+          <TableColumn fx:id="tableColumnNome" prefWidth="330.0" text="Nome" />
         </columns>
       </TableView>
    </children>
