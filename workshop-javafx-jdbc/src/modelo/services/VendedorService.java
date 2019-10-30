@@ -20,4 +20,8 @@ public class VendedorService {
 			dao.alterar(obj);
 		}
 	}
+	
+	public void deletar(Vendedor obj) {
+		dao.excluir(obj.getId());
+	}
 }

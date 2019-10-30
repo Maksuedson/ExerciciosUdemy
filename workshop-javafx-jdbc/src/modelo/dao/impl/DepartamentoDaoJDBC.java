@@ -125,7 +125,7 @@ public class DepartamentoDaoJDBC implements DepartamentoDao{
 		ResultSet rs = null;
 		
 		try {
-			ps = conn.prepareStatement("Select * from department order by name");
+			ps = conn.prepareStatement("Select * from department order by id");
 			rs = ps.executeQuery();
 			
 			List<Departamento> list = new ArrayList<>();

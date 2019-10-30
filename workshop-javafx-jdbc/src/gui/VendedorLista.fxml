@@ -8,22 +8,27 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="389.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DepartamentoListController">
+<VBox prefHeight="472.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.VendedorListController">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
           <Button fx:id="btNovo" mnemonicParsing="false" onAction="#onBtNovoAction" text="Novo" />
         </items>
       </ToolBar>
-      <Label text="Cadastro de Departamento" textFill="#291ec9">
+      <Label text="Cadastro de Vendedor" textFill="#291ec9">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TableView fx:id="tableViewDepartamento" prefHeight="313.0" prefWidth="578.0">
+      <TableView fx:id="tableViewVendedor" prefHeight="313.0" prefWidth="578.0">
         <columns>
-          <TableColumn fx:id="tableColumnId" prefWidth="75.0" text="Id" />
-          <TableColumn fx:id="tableColumnNome" prefWidth="330.0" text="Nome" />
+          <TableColumn fx:id="tableColumnId" prefWidth="51.0" text="Id" />
+          <TableColumn fx:id="tableColumnNome" prefWidth="207.0" text="Nome" />
+            <TableColumn fx:id="tableColumnDataNasc" prefWidth="99.0" text="Data Nasc" />
+            <TableColumn fx:id="tableColumnEmail" prefWidth="127.0" text="Email" />
+            <TableColumn fx:id="tableColumnSalarioBase" prefWidth="87.0" text="Salário" />
+            <TableColumn fx:id="tableColumnEDIT" prefWidth="74.0" text="Editar" />
+            <TableColumn fx:id="tableColumnEXCLUIR" prefWidth="84.0" text="Remover" />
         </columns>
       </TableView>
    </children>

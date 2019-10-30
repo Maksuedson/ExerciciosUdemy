@@ -21,7 +21,7 @@ public class DepartamentoService {
 		}
 	}
 	
-	public void remove(Departamento obj) {
+	public void deletar(Departamento obj) {
 		dao.excluir(obj.getId());
 	}	
 }

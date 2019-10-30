@@ -9,20 +9,23 @@ public class Vendedor implements Serializable{
 	private String nome;
 	private String email;
 	private Date dataNasc;
-	private Double SalarioBase;
+	private Double salarioBase;
 	
 	private Departamento departamento;
 		
 	public Vendedor() {
 	}
 
+
+
 	public Vendedor(Integer id, String nome, String email, Date dataNasc, Double salarioBase,
 			Departamento departamento) {
+		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.dataNasc = dataNasc;
-		SalarioBase = salarioBase;
+		this.salarioBase = salarioBase;
 		this.departamento = departamento;
 	}
 
@@ -59,11 +62,11 @@ public class Vendedor implements Serializable{
 	}
 
 	public Double getSalarioBase() {
-		return SalarioBase;
+		return salarioBase;
 	}
 
 	public void setSalarioBase(Double salarioBase) {
-		SalarioBase = salarioBase;
+		this.salarioBase = salarioBase;
 	}
 
 	public Departamento getDepartamento() {
@@ -102,7 +105,7 @@ public class Vendedor implements Serializable{
 	@Override
 	public String toString() {
 		return "Vendedor [Id: " + id + ", Nome: " + nome + ", Email: " + email + ", Data de Nascimento: " + dataNasc
-				+ ", Salario Base: " + SalarioBase + "]";
+				+ ", Salario Base: " + salarioBase + "]";
 	}
 	
 	
