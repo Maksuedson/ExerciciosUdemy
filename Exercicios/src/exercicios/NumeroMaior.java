@@ -19,5 +19,7 @@ public class NumeroMaior {
 		}else {
 			System.out.println("Higher = "+c);
 		}
+		
+		sc.close();
 	}
 }

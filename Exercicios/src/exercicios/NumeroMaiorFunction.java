@@ -14,6 +14,8 @@ public class NumeroMaiorFunction {
 
 		int Higher = max(a, b, c);
 		showResult(Higher);
+		
+		sc.close();
 	}
 
 	public static int max(int x, int y, int z) {
